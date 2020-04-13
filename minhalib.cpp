@@ -16,12 +16,12 @@ void menu_opcoes()
     cout << "|    [08] Lista 1C Questao 5     [18] Lista 2B Questao 6    |" << endl;
     cout << "|    [09] Lista 1C Questao 6     [19] Lista 2C Questao 4    |" << endl;
     cout << "|    [10] Lista 1C Questao 7     [20] Lista 2D Questao 6    |" << endl;
-    cout << "|    [21] XXXXXXXXXXXXXX         [00] FECHAR PROGRAMA       |" << endl;
+    cout << "|                                                           |" << endl;
+    cout << "|    [0] Fechar Programa                                    |" << endl;
     cout << "|___________________________________________________________|" << endl;
     cout << "\n  >> Escolha a funcao: ";
 }
 
-void mensagem_inicial()
 {   cout << " ____________________________________________________" << endl;
     cout << "|\t        /     \\     /      \\                 |" << endl;
     cout << "|\t       / \\    )\\___/(     / \\                |" << endl;
@@ -29,7 +29,7 @@ void mensagem_inicial()
     cout << "|\t ____/_____\\__\\@   @/___/_____\\____          |" << endl;
     cout << "|\t|             |\\,,,/|              |         |" << endl;
     cout << "|\t|              \\VVV/               |         |" << endl;
-    cout << "|\t|     ----FUNCOES HAYANN----       |         |" << endl;
+    cout << "|\t|    ----FUNCOES BY HAYANN----     |         |" << endl;
     cout << "|\t|              -TP1-               |         |" << endl;
     cout << "|\t|__________________________________|         |" << endl;
     cout << "|\t |    /\\ /      \\  \\       \\ /\\    |         |" << endl;
@@ -482,7 +482,20 @@ string tirandobranco(string p)
     {
         result += p[j];
     }
-    return result;
+
+    result = reverse_string(result);
+
+    string result2;
+
+    for (i = 0; i < (int)result.size() && result[i]==' '; i++);
+    for (int j = i; j < (int)result.size(); j++)
+    {
+        result2 += result[j];
+    }
+
+    result2 = reverse_string(result2);
+
+    return result2;
 }
 
 char* soma_numero_gigante(char *p, char *q)
